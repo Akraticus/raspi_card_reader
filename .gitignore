@@ -1,3 +1,7 @@
+# Output directory
+reports/
+test/built/
+
 # Logs
 logs
 *.log
