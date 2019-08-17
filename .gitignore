@@ -1,6 +1,7 @@
 # Output directory
 reports/
 test/built/
+built/
 
 # Logs
 logs

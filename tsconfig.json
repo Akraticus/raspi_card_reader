@@ -4,5 +4,8 @@
         "target": "es2015",
         "allowJs": true,
         "esModuleInterop": true
-    }
+    },
+    "exclude": [
+        "./jest.config.js"
+    ]
 }
