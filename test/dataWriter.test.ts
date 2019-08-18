@@ -34,6 +34,18 @@ test("writeRecord() - success", async () => {
     }
 });
 
+test("writeRecord() - success for today's date", async () => {
+    
+    let date = moment();
+    try{
+        let success = await DataWriter.writeRecord(new TestRecord(Math.round(Math.random() * 100000), date));
+        expect(success).toBe(true);
+    }
+    catch(err){
+        fail(err);
+    }
+});
+
 test("dirExists() - directory does not exist", async() => {
     let path = "this/path/does/not/exist";
     let success = await DataWriter.dirExists(path);
