@@ -20,7 +20,12 @@ export async function writeRecord(record:Record):Promise<boolean>{
     let path = getCurrentFilePath(record.dateTime);
 
     let doesExist = false;
-    return fileExists(path)
+    return dirExists(path)
+        .then(exists => {
+            let dir = Path.dirname(path);
+            return exists ? new Promise(() => true) : Fs.promises.mkdir(dir, {recursive: true});
+        })
+        .then(() => fileExists(path))
         .then(exists => {
             doesExist = exists;
             return Fs.promises.open(path, "a+");

@@ -1,6 +1,6 @@
 const config = 
 {
-    "csvSaveDirectory": "./reports/"
+    "csvSaveDirectory": "../reports/"
 };
 
 module.exports = config;

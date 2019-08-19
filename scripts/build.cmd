@@ -2,7 +2,7 @@
 set outputDir=%1
 set tsconfig=%2
 
-:: (rmdir) Delete test/built directory; (/s) with all content; (/q) no confirmation prompt
+:: (rmdir) Delete output directory; (/s) with all content; (/q) no confirmation prompt
 rmdir /q /s "%outputDir%"
 
 :: robust copy the package.json to the output directory
